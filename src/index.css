@@ -1,0 +1,94 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  body {
+    @apply text-gray-dark bg-white;
+  }
+}
+
+@layer components {
+  .container-custom {
+    @apply container mx-auto px-4 md:px-8 max-w-7xl;
+  }
+  
+  .btn-primary {
+    @apply px-6 py-3 bg-secondary hover:bg-secondary/90 text-white font-medium rounded-md 
+           transition-all duration-300 inline-block shadow-lg hover:shadow-xl transform hover:-translate-y-0.5;
+  }
+  
+  .section-title {
+    @apply text-3xl md:text-4xl font-bold mb-4 text-primary;
+  }
+  
+  .section-subtitle {
+    @apply text-lg text-gray-dark/80 mb-10 max-w-3xl mx-auto;
+  }
+  
+  .section-padding {
+    @apply py-20 md:py-28;
+  }
+  
+  .card {
+    @apply bg-white rounded-xl shadow-lg transition-all duration-300 hover:shadow-xl 
+           transform hover:-translate-y-1 border border-gray-light/20;
+  }
+  
+  .nav-link {
+    @apply px-4 py-2 text-gray-dark hover:text-secondary transition-colors duration-300 
+           relative after:content-[''] after:absolute after:bottom-0 after:left-0 
+           after:w-0 after:h-0.5 after:bg-secondary hover:after:w-full after:transition-all;
+  }
+  
+  .nav-link.active {
+    @apply text-secondary font-medium after:w-full;
+  }
+
+  .page-transition {
+    @apply animate-fade-in;
+  }
+
+  .service-card {
+    @apply card p-6 hover:bg-primary/5;
+  }
+
+  .service-icon {
+    @apply w-16 h-16 bg-primary text-white rounded-full flex items-center justify-center mb-4
+           transform transition-all duration-300 group-hover:scale-110 group-hover:bg-secondary;
+  }
+
+  .input-field {
+    @apply w-full px-4 py-3 rounded-lg border border-gray-light focus:border-accent 
+           focus:ring-2 focus:ring-accent/20 outline-none transition-all duration-300;
+  }
+}
+
+.smooth-scroll {
+  scroll-behavior: smooth;
+}
+
+.fade-enter {
+  opacity: 0;
+}
+
+.fade-enter-active {
+  opacity: 1;
+  transition: opacity 300ms ease-in;
+}
+
+.fade-exit {
+  opacity: 1;
+}
+
+.fade-exit-active {
+  opacity: 0;
+  transition: opacity 300ms ease-in;
+}
