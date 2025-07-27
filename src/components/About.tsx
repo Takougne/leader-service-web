@@ -15,7 +15,7 @@ const About: React.FC = () => {
         <div className="grid md:grid-cols-2 gap-10 items-center">
           <div>
             <img 
-              src="https://images.pexels.com/photos/2760248/pexels-photo-2760248.jpeg" 
+              src="/src/assets/images/Eneo-kribi..png" 
               alt="À propos de LEADER SERVICE" 
               className="rounded-lg shadow-lg w-full h-auto object-cover"
             />
