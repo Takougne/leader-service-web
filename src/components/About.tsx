@@ -15,7 +15,7 @@ const About: React.FC = () => {
         <div className="grid md:grid-cols-2 gap-10 items-center">
           <div className="flex justify-center">
             <img 
-              src="public\images\WhatsApp Image 2024-11-19 à 11.33.52_11116d28.jpg" 
+              src="/images/WhatsApp Image 2024-11-19 à 11.33.52_11116d28.jpg" 
               alt="À propos de LEADER SERVICE" 
               className="rounded-lg shadow-lg w-full max-w-[647px] h-[400px] object-cover"
               style={{ width: '647px', height: '400px' }}
