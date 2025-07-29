@@ -1,5 +1,6 @@
 import React from 'react';
 import { ChevronDown } from 'lucide-react';
+import { Link } from 'react-router-dom'; // Importez Link depuis react-router-dom
 
 const Hero: React.FC = () => {
   return (
@@ -26,12 +27,21 @@ const Hero: React.FC = () => {
           Étendre notre action sur le territoire national et international, devenir un acteur incontournable du génie civil, et mettre en service une maintenance industrielle et automobile fiable.
         </p>
         <div className="flex flex-col sm:flex-row gap-4">
-          <a href="#services" className="btn-primary">
+          {/* Lien vers la page Services */}
+          <Link 
+            to="/services" 
+            className="px-6 py-3 bg-primary hover:bg-primary-dark text-white font-medium rounded-md transition-all duration-300 inline-block"
+          >
             Découvrir nos services
-          </a>
-          <a href="#contact" className="px-6 py-3 bg-white text-primary hover:bg-gray-100 font-medium rounded-md transition-all duration-300 inline-block">
+          </Link>
+          
+          {/* Lien vers la page Contact */}
+          <Link 
+            to="/contact" 
+            className="px-6 py-3 bg-white text-primary hover:bg-gray-100 font-medium rounded-md transition-all duration-300 inline-block"
+          >
             Nous contacter
-          </a>
+          </Link>
         </div>
         
         {/* Scroll indicator */}

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, ChevronRight, HardHat } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
+import logo from '../assets/images/logo leader WHITE (3).png'; // Static logo import
 
 const navLinks = [
   { name: 'Accueil', href: '/' },
@@ -42,14 +43,19 @@ const Navbar: React.FC = () => {
       <div className="container-custom">
         <div className="flex items-center justify-between">
           <Link to="/" className="flex items-center">
-            <HardHat className={`h-10 w-10 ${scrolled ? 'text-primary' : 'text-white'}`} />
+            {/* Static logo - no color changes */}
+            <img 
+              src={logo} 
+              alt="LEADER SERVICE Logo" 
+              className="h-12 w-auto" // No dynamic classes
+            />
             <div className="ml-2">
-              <h1 className={`font-bold text-lg md:text-xl transition-colors duration-300 ${
+              <h1 className={`font-bold text-lg md:text-xl ${
                 scrolled ? 'text-primary' : 'text-white'
               }`}>
                 LEADER SERVICE
               </h1>
-              <p className={`text-xs transition-colors duration-300 ${
+              <p className={`text-xs ${
                 scrolled ? 'text-gray-dark/80' : 'text-gray-light'
               }`}>
                 Expertise en Génie Civil
