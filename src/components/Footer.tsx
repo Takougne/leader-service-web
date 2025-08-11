@@ -1,6 +1,17 @@
 import React from 'react';
 import { Facebook, Twitter, Linkedin, Instagram, ChevronRight, HardHat, MapPin, Mail, Phone, Clock } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
+
+// Scroll to top component
+const ScrollToTop: React.FC = () => {
+  const { pathname } = useLocation();
+
+  React.useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, [pathname]);
+
+  return null;
+};
 
 const Footer: React.FC = () => {
   const navLinks = [
@@ -23,6 +34,9 @@ const Footer: React.FC = () => {
 
   return (
     <footer className="bg-blue-900 text-white">
+      {/* Add ScrollToTop component here */}
+      <ScrollToTop />
+      
       <div className="container-custom pt-16 pb-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-10">
           {/* Company Info */}
@@ -82,6 +96,7 @@ const Footer: React.FC = () => {
                   <Link
                     to={link.href}
                     className="hover:text-orange-500 transition-colors duration-300 flex items-center w-full text-left"
+                    onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
                   >
                     <ChevronRight className="h-4 w-4 mr-1" />
                     {link.name}
@@ -102,6 +117,7 @@ const Footer: React.FC = () => {
                   <Link
                     to="/services"
                     className="hover:text-orange-500 transition-colors duration-300 flex items-center w-full text-left"
+                    onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
                   >
                     <ChevronRight className="h-4 w-4 mr-1" />
                     {service}

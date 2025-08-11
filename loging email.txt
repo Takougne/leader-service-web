@@ -1,0 +1,3 @@
+EMAIL_USER=takougnefranck@leaderservicebtp.com
+EMAIL_PASS=Takougne@2020
+NEXT_PUBLIC_CONTACT_EMAIL=leaderservicebtpcm@gmail.com

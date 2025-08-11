@@ -23,13 +23,16 @@ const Contact: React.FC = () => {
         body: JSON.stringify(data),
       });
 
+      const result = await response.json();
+
       if (response.ok) {
         alert('Message envoyé avec succès!');
         form.reset();
       } else {
-        throw new Error('Erreur lors de l\'envoi du message');
+        throw new Error(result.error || 'Erreur lors de l\'envoi du message');
       }
     } catch (error) {
+      console.error('Error:', error);
       alert('Une erreur est survenue. Veuillez réessayer plus tard.');
     }
   };
@@ -106,7 +109,7 @@ const Contact: React.FC = () => {
                     type="text" 
                     id="name" 
                     name="name"
-                    className="input-field"
+                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
                     placeholder="Votre nom"
                     required
                   />
@@ -117,7 +120,7 @@ const Contact: React.FC = () => {
                     type="email" 
                     id="email" 
                     name="email"
-                    className="input-field"
+                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
                     placeholder="Votre email"
                     required
                   />
@@ -130,7 +133,7 @@ const Contact: React.FC = () => {
                   type="text" 
                   id="subject" 
                   name="subject"
-                  className="input-field"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
                   placeholder="Sujet de votre message"
                   required
                 />
@@ -142,7 +145,7 @@ const Contact: React.FC = () => {
                   id="message" 
                   name="message"
                   rows={5} 
-                  className="input-field resize-none"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent resize-none"
                   placeholder="Votre message..."
                   required
                 ></textarea>
@@ -150,7 +153,7 @@ const Contact: React.FC = () => {
               
               <button 
                 type="submit" 
-                className="btn-primary w-full flex items-center justify-center group hover:scale-105 transform transition-all duration-300"
+                className="w-full bg-primary hover:bg-primary-dark text-white font-medium py-2 px-4 rounded-md transition duration-300 flex items-center justify-center group"
               >
                 <span className="group-hover:translate-x-1 transition-transform duration-300">
                   Envoyer le Message
