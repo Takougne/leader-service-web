@@ -1,7 +1,21 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
-// https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react()]
+  plugins: [react()],
+  base: '/', // Set to your subdirectory if needed (e.g., '/leaderservice/')
+  server: {
+    // For development server
+    proxy: {
+      // Proxy API requests if needed
+    }
+  },
+  build: {
+    outDir: 'dist',
+    rollupOptions: {
+      input: {
+        main: './index.html',
+      },
+    },
+  },
 });
