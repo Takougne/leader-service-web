@@ -4,7 +4,8 @@ import { BrowserRouter } from 'react-router-dom';
 import App from './App';
 import './index.css';
 
-createRoot(document.getElementById('root')).render(
+// Since we know the root element exists, we can safely assert it
+createRoot(document.getElementById('root') as HTMLElement).render(
   <StrictMode>
     <BrowserRouter basename="/">
       <App />
