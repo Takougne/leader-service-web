@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ExternalLink, Plus, X } from 'lucide-react';
+import { ExternalLink, Plus, X, Download } from 'lucide-react';
 
 interface Project {
   id: number;
@@ -366,6 +366,23 @@ const Projects: React.FC = () => {
           <p className="section-subtitle">
             Découvrez nos projets récents et nos réalisations exceptionnelles
           </p>
+          <p className="text-lg text-gray-600 mb-6 max-w-2xl mx-auto">
+            Pour découvrir toutes nos activités en détail, n'hésitez pas à consulter notre plaquette commerciale.
+          </p>
+          <button
+            onClick={() => {
+              const link = document.createElement('a');
+              link.href = '/PRESENTATION LEADER SERVICE 2024 final LATESTE .pdf';
+              link.download = 'PRESENTATION LEADER SERVICE 2024 final LATESTE .pdf';
+              document.body.appendChild(link);
+              link.click();
+              document.body.removeChild(link);
+            }}
+            className="inline-flex items-center gap-2 bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-secondary transition-colors mb-6"
+          >
+            <Download className="h-5 w-5" />
+            Télécharger notre plaquette commerciale
+          </button>
           {isAdmin && (
             <button className="btn-primary flex items-center mx-auto mt-4">
               <Plus className="w-5 h-5 mr-2" />
@@ -494,6 +511,8 @@ const Projects: React.FC = () => {
           </div>
         )}
       </div>
+      
+    
     </section>
   );
 };
